@@ -1,6 +1,6 @@
 import React from 'react'
 import { ShoppingCart } from "lucide-react";
-import logo from "../assets/colorful-bird-gradient-illustration-logo-concept_1253202-1468.avif"
+import logo from "../../assets/colorful-bird-gradient-illustration-logo-concept_1253202-1468.avif"
 
 const Navbar = () => {
   return (

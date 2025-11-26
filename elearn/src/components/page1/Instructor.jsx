@@ -1,5 +1,5 @@
 import React from 'react'
-import china from '../assets/courses/china.png'
+import china from '../../assets/courses/china.png'
 
 const Instructor = () => {
   return (

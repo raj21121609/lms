@@ -1,5 +1,5 @@
 import React from 'react'
-import CountUp from './animations/CountUp'
+import CountUp from '../animations/CountUp'
 
 const NumberStrip = () => {
 

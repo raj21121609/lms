@@ -1,10 +1,10 @@
 import React from 'react'
-import bg from '../assets/bg.png'
-import girl from '../assets/girl.png'
-import no from '../assets/no.png'
-import dots from '../assets/dots.png'
-import compRate from '../assets/compRate.png'
-import people from '../assets/people.png'
+import bg from '../../assets/bg.png'
+import girl from '../../assets/girl.png'
+import no from '../../assets/no.png'
+import dots from '../../assets/dots.png'
+import compRate from '../../assets/compRate.png'
+import people from '../../assets/people.png'
 
 const Hero = () => {
   return (

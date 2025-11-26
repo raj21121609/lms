@@ -1,8 +1,8 @@
 import React from 'react'
-import bag from '../assets/categories/bag.png'
-import dev from '../assets/categories/dev.png'
-import phy from '../assets/categories/phy.png'
-import scope from '../assets/categories/scope.png'
+import bag from '../../assets/categories/bag.png'
+import dev from '../../assets/categories/dev.png'
+import phy from '../../assets/categories/phy.png'
+import scope from '../../assets/categories/scope.png'
 
 const Categories = () => {
   return (<>

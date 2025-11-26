@@ -1,12 +1,15 @@
 import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import NumberStrip from './components/NumberStrip'
+import Navbar from './components/page1/Navbar'
+import Hero from './components/page1/Hero'
+import NumberStrip from './components/page1/NumberStrip'
 import ClickSpark  from './components/animations/ClickSpark'
-import Categories from './components/Categories'
-import Courses from './components/Courses'
-import Instructor from './components/Instructor'
-import Comments from './components/Comments'
+import Categories from './components/page1/Categories'
+import Courses from './components/page1/Courses'
+import Instructor from './components/page1/Instructor'
+import Comments from './components/page1/Comments'
+import Become from './components/page1/Become'
+import Become2 from './components/page1/Become2'
+import Page1 from './components/pages/page1'
 
 function App() {
   
@@ -19,13 +22,8 @@ function App() {
         sparkCount={8}
         duration={400}
       >
-        <Navbar/>
-            <Hero/>
-            <NumberStrip/>
-            <Categories/>
-            <Courses/>
-            <Instructor/>
-            <Comments/>
+        <Page1/>
+
       </ClickSpark>    
     </>
   )
