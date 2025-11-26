@@ -8,6 +8,7 @@ import Comments from '../page1/Comments'
 import Become from '../page1/Become'
 import Become2 from '../page1/Become2'
 import Navbar from '../page1/Navbar'
+import Footer from '../page1/Footer'
 
 const Page1 = () => {
   return (
@@ -21,6 +22,7 @@ const Page1 = () => {
             <Comments/>
             <Become/>
             <Become2/>
+            <Footer/>
     </>
   )
 }
