@@ -1,6 +1,7 @@
 import React from 'react'
 import quo from '../../assets/courses/quo.png'
 import jane from '../../assets/courses/jane.png'
+import paging from '../../assets/paging.png'
 
 const Comments = () => {
   return (
@@ -8,7 +9,9 @@ const Comments = () => {
     <div className='bg-[#EBEBEE] h-[450px] px-20'>
         <div className='flex justify-between pt-17'>
             <div className='text-xl font-[500]'>What Our Customer Say <br /> About Us</div>
-            <div className='bg-amber-800'>dabba</div>
+            <div className=''>
+              <img src={paging} className='w-32' alt="" />
+            </div>
         </div>
         <div className='flex justify-between'>
             <div className='py-7 px-7 mt-8 rounded-lg border-2 border-gray-200 shadow-lg shadow-gray-300 bg-white h-[230px] w-[390px]'>

@@ -14,15 +14,15 @@ const Page1 = () => {
   return (
     <>
         <Navbar/>
-            <Hero/>
-            <NumberStrip/>
-            <Categories/>
-            <Courses/>
-            <Instructor/>
-            <Comments/>
-            <Become/>
-            <Become2/>
-            <Footer/>
+        <Hero/>
+        <NumberStrip/>
+        <Categories/>
+        <Courses text="Top Courses"/>
+        <Instructor seeActive={true} text="Top Instructors"/>
+        <Comments/>
+        <Become/>
+        <Become2/>
+        <Footer/>
     </>
   )
 }

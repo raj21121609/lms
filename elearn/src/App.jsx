@@ -1,5 +1,7 @@
 import './App.css'
 import ClickSpark  from './components/animations/ClickSpark'
+import Page2 from './components/pages/Page2'
+import Page3 from './components/pages/Page3'
 import Page1 from './components/pages/page1'
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
         sparkCount={8}
         duration={400}
       >
-        <Page1/>
+        <Page2/>
       </ClickSpark>    
     </>
   )
