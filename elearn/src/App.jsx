@@ -6,6 +6,8 @@ import Page1 from './components/pages/page1'
 import Page4 from './components/pages/Page4'
 import Page5 from './components/pages/Page5'
 import Page6 from './components/pages/Page6'
+import Page0 from './components/pages/Page0'
+import PageS from './components/pages/PageS'
 
 function App() {
   
@@ -18,7 +20,7 @@ function App() {
         sparkCount={8}
         duration={400}
       >
-        <Page6/>
+        <PageS/>
       </ClickSpark>    
     </>
   )
