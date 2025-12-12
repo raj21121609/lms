@@ -10,7 +10,7 @@ const Courses = (props) => {
         <div className='text-blue-600'>See All</div>
     </div>
     <div className='px-20 flex justify-between'>
-        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex flex-col'>
+        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex bg-white flex-col'>
             <img src={laptop} className='h-[140px] ' alt="" />
             <div className='pt-2 font-[500]'>Beginner's Guide to Design</div>
             <div className='text-[14px] text-gray-700'>By Ronald Richards</div>
@@ -34,7 +34,7 @@ const Courses = (props) => {
             <div className='text-[13px] text-gray-700'>22 Total Hours. 155 Lectures. Beginner</div>
             <div className='font-[600] pt-1'>₹149</div>
         </div>
-        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex flex-col'>
+        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex flex-col bg-white'>
             <img src={laptop} className='h-[140px] ' alt="" />
             <div className='pt-2 font-[500]'>Beginner's Guide to Design</div>
             <div className='text-[14px] text-gray-700'>By Ronald Richards</div>
@@ -58,7 +58,7 @@ const Courses = (props) => {
             <div className='text-[13px] text-gray-700'>22 Total Hours. 155 Lectures. Beginner</div>
             <div className='font-[600] pt-1'>₹149</div>
         </div>
-        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex flex-col'>
+        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex flex-col bg-white'>
             <img src={laptop} className='h-[140px] ' alt="" />
             <div className='pt-2 font-[500]'>Beginner's Guide to Design</div>
             <div className='text-[14px] text-gray-700'>By Ronald Richards</div>
@@ -82,7 +82,7 @@ const Courses = (props) => {
             <div className='text-[13px] text-gray-700'>22 Total Hours. 155 Lectures. Beginner</div>
             <div className='font-[600] pt-1'>₹149</div>
         </div>
-        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex flex-col'>
+        <div className='h-[283px] w-[260px] p-3 border-2 rounded-xl shadow-lg border-gray-200 shadow-gray-100 flex flex-col bg-white'>
             <img src={laptop} className='h-[140px] ' alt="" />
             <div className='pt-2 font-[500]'>Beginner's Guide to Design</div>
             <div className='text-[14px] text-gray-700'>By Ronald Richards</div>

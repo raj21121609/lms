@@ -4,6 +4,7 @@ import logo from "../../assets/logos.png";
 import smile from "../../assets/smile.png";
 import { Globe, Award, GraduationCap, Play } from "lucide-react";
 import CourseAccordion from "../reusables/CourseAccordion";
+import Learner from "../reusables/Learner";
 
 const Intro = () => {
 
@@ -139,13 +140,7 @@ const Intro = () => {
           </div>
         </div>
       </div>
-      <div className="px-28">
-        <div className=" text-2xl font-[600] mb-6 ">Learners Review</div>
-        <div className="flex">
-          <div></div>
-          <div>comments</div>
-        </div>
-      </div>
+      <Learner/>
     </>
   );
 };
