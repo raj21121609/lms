@@ -8,6 +8,12 @@ import Page5 from './components/pages/Page5'
 import Page6 from './components/pages/Page6'
 import Page7 from './components/pages/Page7'
 import Page8 from './components/pages/Page8'
+import Page9 from './components/pages/Page9'
+import Page10 from './components/pages/Page10'
+import Page11 from './components/pages/Page11'
+import Page12 from './components/pages/Page12'
+import Page13 from './components/pages/Page13'
+import Page14 from './components/pages/Page14'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
@@ -22,7 +28,7 @@ function App() {
         sparkCount={8}
         duration={400}
       >
-        <Page8/>
+        <Page14/>
       </ClickSpark>    
     </>
   )

@@ -1,0 +1,363 @@
+import { useState } from "react";
+import { LucideShare2 } from "lucide-react";
+import guy from "../../assets/guy.png";
+import Nav2 from "../page2/Nav2";
+import Footer from "../page1/Footer";
+
+import React from "react";
+
+const ProfileOne = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [Headline, setHeadline] = useState("");
+  const [Description, setDescription] = useState("");
+  const [language, setLanguage] = useState("");
+  const [image, setImage] = useState(null);
+  const [label, setLabel] = useState("");
+
+  const [webLink, setWebLink] = useState("");
+  const [XLLink, setXLLink] = useState("");
+  const [linkdin, setLinkdin] = useState("");
+  const [youTube, setYouTube] = useState("");
+  const [Facebook, setFacebook] = useState("");
+
+  const formHandler = (e) => {
+    e.preventDefault();
+    console.log({ webLink, XLLink, linkdin, youTube, Facebook });
+  };
+
+  const handleUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(URL.createObjectURL(file));
+    }
+  };
+
+  const languages = [
+    "English",
+    "Hindi",
+    "Marathi",
+    "German",
+    "Spanish",
+    "French",
+    "Chinese",
+    "Japanese",
+    "Korean",
+    "Arabic",
+    "Russian",
+    "Portuguese",
+    "Italian",
+    "Bengali",
+    "Tamil",
+    "Telugu",
+    "Gujarati",
+    "Punjabi",
+    "Urdu",
+    "Malayalam",
+    "Turkish",
+    "Dutch",
+    "Greek",
+    "Hebrew",
+    "Swedish",
+    "Polish",
+    "Czech",
+    "Thai",
+    "Vietnamese",
+    "Indonesian",
+    "Filipino",
+    "Swahili",
+    "Zulu",
+    "Afrikaans",
+    "Persian",
+    "Romanian",
+    "Hungarian",
+    "Finnish",
+    "Norwegian",
+    "Danish",
+  ];
+
+  return (
+    <>
+      <Nav2 />
+      <div className="flex ">
+        <div className=" bg-white mx-16 mt-8 rounded-2xl">
+          <div className="w-full  rounded-2xl bg-[#EBEBEE] pt-3 ">
+            <div className="pt-2">
+              <img
+                className="rounded-full w-1/2 object-cover mx-auto"
+                src={guy}
+              />
+            </div>
+            <p className="text-2xl mt-2 font-[600] mx-auto text-center">
+              John Doe
+            </p>
+            <button className="bg-white mx-auto flex text-md font-[500] mt-3  px-6 py-2 rounded-md border border-gray-400">
+              Share Profile
+              <LucideShare2 className="ml-1" />
+            </button>
+            <hr className=" mt-5 border-gray-400 "></hr>
+
+            <button className="w-full text-start py-6 pl-6 mt-3 hover:bg-gray-900 hover:text-white text-sm  text-gray-700">
+              Profile
+            </button>
+            <hr className=" border-gray-400  "></hr>
+            <button className="w-full text-start text-sm py-6 pl-6 hover:bg-gray-900 text-gray-700 hover:text-white ">
+              My Course
+            </button>
+            <hr className=" border-gray-400  "></hr>
+            <button className="w-full text-start text-sm py-6 pl-6 text-gray-700 hover:bg-gray-900 hover:text-white ">
+              Teachers
+            </button>
+            <hr className=" border-gray-400 "></hr>
+            <button className="w-full text-start py-6 pl-6 text-sm text-gray-700 hover:bg-gray-900 hover:text-white ">
+              Message
+            </button>
+            <hr className=" border-gray-400 "></hr>
+            <button className="w-full text-start py-6  pl-6  text-gray-700 rounded-b-2xl hover:bg-gray-900 hover:text-white text-sm ">
+              My Reviews
+            </button>
+          </div>
+        </div>
+
+        <div className="w-[70%] h-full mt-8 mr-5 pr-20">
+          <div className="w-full h-full  border border-gray-400 rounded-lg ">
+            <form onSubmit={formHandler}>
+              <div className="flex gap-30 mt-5 ">
+                <div className="ml-6">
+                  <label htmlFor="first_name">First Name</label>
+                  <br />
+                  <input
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => {
+                      setFirstName(e.target.value);
+                    }}
+                    id="first_name"
+                    name="firstName"
+                    placeholder="Label"
+                    className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="last_name">Last Name</label>
+                  <br />
+                  <input
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => {
+                      setLastName(e.target.value);
+                    }}
+                    id="last_name"
+                    name="lastName"
+                    placeholder="Label"
+                    className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
+                  />
+                </div>
+              </div>
+              <div className="ml-6 mt-5">
+                <label htmlFor="Headline">Headline</label>
+                <br />
+                <input
+                  type="text"
+                  value={Headline}
+                  onChange={(e) => {
+                    setHeadline(e.target.value);
+                  }}
+                  id="Headline"
+                  name="headline"
+                  placeholder="Label"
+                  className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
+                />
+              </div>
+              <div className="ml-6 mt-5">
+                <label htmlFor="Description">Description</label>
+                <br />
+                <input
+                  type="text"
+                  value={Description}
+                  onChange={(e) => {
+                    setDescription(e.target.value);
+                  }}
+                  id="Description"
+                  name="Description"
+                  placeholder="Label"
+                  className="pt-2 pb-20 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm"
+                />
+              </div>
+              <div className="ml-6 mt-5">
+                <label htmlFor="Language">Language</label>
+                <br />
+                <select
+                  name="Language"
+                  id="language"
+                  className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm mb-7"
+                >
+                  {languages.map((language) => (
+                    <option key={language} value={language}>
+                      {language}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <div className="w-full h-full  mt-3 border border-gray-400 rounded-lg ">
+            <div className="w-full h-full flex justify-center p-6">
+              <div className="bg-white w-full max-w-4xl p-6 rounded-xl shadow-sm ">
+                <h2 className="">Image Preview</h2>
+
+                <div className="w-full h-64 bg-gray-100 border mt-2 border-gray-400 rounded-xl flex items-center justify-center overflow-hidden">
+                  {image ? (
+                    <img
+                      src={image}
+                      alt="Preview"
+                      className="h-full object-cover"
+                    />
+                  ) : (
+                    <div className="text-gray-400 text-sm flex flex-col items-center">
+                      <svg
+                        className="w-12 h-12 mb-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeWidth="2"
+                          d="M3 5h18M3 19h18M5 5v14M19 5v14M8 10h8M8 14h5"
+                        />
+                      </svg>
+                      No Image Selected
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-6">
+                  <p>Add/Change Image</p>
+
+                  <div className="flex items-center gap-4">
+                    <input
+                      type="text"
+                      placeholder="Label"
+                      value={label}
+                      onChange={(e) => setLabel(e.target.value)}
+                      className="py-2 pl-2 text-sm mt-2 border w-full border-gray-400 rounded-sm"
+                    />
+
+                    <label className="px-5 py-2 border border-gray-400 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                      Upload Image
+                      <input
+                        type="file"
+                        className="hidden"
+                        accept="image/*"
+                        onChange={handleUpload}
+                      />
+                    </label>
+                  </div>
+
+                  <button className="mt-5 bg-[#0a132b] text-white px-6 py-3 rounded-lg text-sm">
+                    Save Image
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Links */}
+          <div className="w-full h-full mt-3 border border-gray-400 rounded-lg ">
+            <div className="ml-6  ">
+              <p className="ml-6 mt-5 font-medium">Links</p>
+              <form onSubmit={formHandler}>
+                <div className=" mt-5 ml-6">
+                  <div className="mt-5">
+                    <label htmlFor="Website">Website</label>
+                    <br />
+                    <input
+                      type="url"
+                      value={webLink}
+                      onChange={(e) => {
+                        setWebLink(e.target.value);
+                      }}
+                      id="Website"
+                      name="Website"
+                      placeholder="Label"
+                      className="py-2 pl-2 text-sm mt-2 border w-2xl border-gray-400 rounded-sm"
+                    />
+                  </div>
+
+                  <div className="mt-4">
+                    <label htmlFor="twitter">X(Formerly twitter)</label>
+                    <br />
+                    <input
+                      type="url"
+                      value={XLLink}
+                      onChange={(e) => {
+                        setXLLink(e.target.value);
+                      }}
+                      id="twitter"
+                      name="twitter"
+                      placeholder="Label"
+                      className="py-2 pl-2 text-sm mt-2  border w-2xl border-gray-400 rounded-sm"
+                    />
+                  </div>
+
+                  <div className="mt-4">
+                    <label htmlFor="linkdin">Linkdin</label>
+                    <br />
+                    <input
+                      type="url"
+                      value={linkdin}
+                      onChange={(e) => {
+                        setLinkdin(e.target.value);
+                      }}
+                      id="linkdin"
+                      name="linkdin"
+                      placeholder="Label"
+                      className="py-2 pl-2 text-sm mt-2  border w-2xl border-gray-400 rounded-sm"
+                    />
+                  </div>
+
+                  <div className="mt-4">
+                    <label htmlFor="youtube">Youtube</label>
+                    <br />
+                    <input
+                      type="url"
+                      value={youTube}
+                      onChange={(e) => {
+                        setYouTube(e.target.value);
+                      }}
+                      id="youtube"
+                      name="youtube"
+                      placeholder="Label"
+                      className="py-2 pl-2 text-sm  mt-2  border w-2xl border-gray-400 rounded-sm"
+                    />
+                  </div>
+
+                  <div className="mt-4">
+                    <label htmlFor="facebook">Facebook</label>
+                    <br />
+                    <input
+                      type="url"
+                      value={Facebook}
+                      onChange={(e) => {
+                        setFacebook(e.target.value);
+                      }}
+                      id="facebook"
+                      name="Facebook"
+                      placeholder="Label"
+                      className="py-2 pl-2 text-sm  mt-2  border mb-5 w-2xl border-gray-400 rounded-sm"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-20"></div>
+      <Footer />
+    </>
+  );
+};
+
+export default ProfileOne;
