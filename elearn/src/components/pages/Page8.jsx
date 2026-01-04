@@ -4,16 +4,26 @@ import Txt from '../page8/Txt'
 import Learner from '../reusables/Learner'
 import Footer from '../page1/Footer'
 import Next from '../page8/Next'
+import ClickSpark from '../animations/ClickSpark'
 
 const Page8 = () => {
   return (
     <>
-    <Nav2/>
-    <Txt/>
-    <Next/>
-    <div className='h-9 w-full'></div>
-    <Learner/>
-    <Footer/>
+    <ClickSpark
+        sparkColor="#4A90E2"
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
+        <Nav2/>
+        <Txt/>
+        <Next/>
+        <div className='h-9 w-full'></div>
+        <Learner/>
+        <Footer/>
+      </ClickSpark>
+    
     </>
   )
 }

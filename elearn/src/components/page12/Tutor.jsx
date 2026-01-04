@@ -126,13 +126,12 @@ const Tutor = () => {
             </div>
           </div>
           <div className="mt-4 flex flex-wrap gap-7">
-            <Chini/>
-            <Chini/>
-            <Chini/>
-            <Chini/>
-            <Chini/>
-            <Chini/>
-
+            <Chini />
+            <Chini />
+            <Chini />
+            <Chini />
+            <Chini />
+            <Chini />
           </div>
         </div>
       </div>

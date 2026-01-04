@@ -3,7 +3,7 @@ import boy from '../../assets/courses/boy.png'
 
 const Become2 = () => {
   return (
-    <div className='h-[500px] mt-15 flex justify-between px-25 w-full'>
+    <div className='h-[500px] mt-10 flex justify-between px-15 w-full'>
       <div className='pt-[90px] pl-6'>
         <div className='text-3xl font-[600]'>Transform your life through education</div>
         <div className='text-[17px] text-gray-700   '>Learning around the world are launching new careers, advancing in <br />
