@@ -26,7 +26,7 @@ const Navbar = () => {
             hover:border-gray-400 hover:bg-white hover:shadow-[0_0_0_4px_rgba(156,163,175,0.2)]"
         />
         </div>
-        <div className='text-[#2C3E50]'>Teach on Myway</div>
+        <div className='text-[#2C3E50] border-1 border-black p-2 bg-red-500'>Teach on Myways</div>
 
         </div>
     <div className='flex gap-5 items-center pr-2'>

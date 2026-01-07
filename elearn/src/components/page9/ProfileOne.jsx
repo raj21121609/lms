@@ -7,19 +7,6 @@ import Footer from "../page1/Footer";
 import React from "react";
 
 const ProfileOne = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [Headline, setHeadline] = useState("");
-  const [Description, setDescription] = useState("");
-  const [language, setLanguage] = useState("");
-  const [image, setImage] = useState(null);
-  const [label, setLabel] = useState("");
-
-  const [webLink, setWebLink] = useState("");
-  const [XLLink, setXLLink] = useState("");
-  const [linkdin, setLinkdin] = useState("");
-  const [youTube, setYouTube] = useState("");
-  const [Facebook, setFacebook] = useState("");
 
   const formHandler = (e) => {
     e.preventDefault();
@@ -35,45 +22,10 @@ const ProfileOne = () => {
 
   const languages = [
     "English",
-    "Hindi",
-    "Marathi",
     "German",
     "Spanish",
     "French",
-    "Chinese",
-    "Japanese",
-    "Korean",
-    "Arabic",
-    "Russian",
-    "Portuguese",
     "Italian",
-    "Bengali",
-    "Tamil",
-    "Telugu",
-    "Gujarati",
-    "Punjabi",
-    "Urdu",
-    "Malayalam",
-    "Turkish",
-    "Dutch",
-    "Greek",
-    "Hebrew",
-    "Swedish",
-    "Polish",
-    "Czech",
-    "Thai",
-    "Vietnamese",
-    "Indonesian",
-    "Filipino",
-    "Swahili",
-    "Zulu",
-    "Afrikaans",
-    "Persian",
-    "Romanian",
-    "Hungarian",
-    "Finnish",
-    "Norwegian",
-    "Danish",
   ];
 
   return (
@@ -128,10 +80,6 @@ const ProfileOne = () => {
                   <br />
                   <input
                     type="text"
-                    value={firstName}
-                    onChange={(e) => {
-                      setFirstName(e.target.value);
-                    }}
                     id="first_name"
                     name="firstName"
                     placeholder="Label"
@@ -143,10 +91,6 @@ const ProfileOne = () => {
                   <br />
                   <input
                     type="text"
-                    value={lastName}
-                    onChange={(e) => {
-                      setLastName(e.target.value);
-                    }}
                     id="last_name"
                     name="lastName"
                     placeholder="Label"
@@ -159,10 +103,6 @@ const ProfileOne = () => {
                 <br />
                 <input
                   type="text"
-                  value={Headline}
-                  onChange={(e) => {
-                    setHeadline(e.target.value);
-                  }}
                   id="Headline"
                   name="headline"
                   placeholder="Label"
@@ -174,10 +114,6 @@ const ProfileOne = () => {
                 <br />
                 <input
                   type="text"
-                  value={Description}
-                  onChange={(e) => {
-                    setDescription(e.target.value);
-                  }}
                   id="Description"
                   name="Description"
                   placeholder="Label"
@@ -198,6 +134,32 @@ const ProfileOne = () => {
                     </option>
                   ))}
                 </select>
+              </div>
+
+              <div className="ml-6 mt-5">
+                <label htmlFor="aoe">Area of expertise</label>
+                <br />
+
+                <textarea
+                  id="aoe"
+                  name="aoe"
+                  placeholder="Label"
+                  rows={10}
+                  className="pt-2 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm resize-none"
+                />
+              </div>
+
+
+              <div className="ml-6 mt-5 mb-5">
+                <label htmlFor="aoe">Professional Experience</label>
+                <br />
+                <input
+                  type="text"
+                  id="pe"
+                  name="pe"
+                  placeholder="Enter your Professional experience"
+                  className="pt-2 pb-20 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm"
+                />
               </div>
             </form>
           </div>
@@ -239,8 +201,6 @@ const ProfileOne = () => {
                     <input
                       type="text"
                       placeholder="Label"
-                      value={label}
-                      onChange={(e) => setLabel(e.target.value)}
                       className="py-2 pl-2 text-sm mt-2 border w-full border-gray-400 rounded-sm"
                     />
 
@@ -250,7 +210,6 @@ const ProfileOne = () => {
                         type="file"
                         className="hidden"
                         accept="image/*"
-                        onChange={handleUpload}
                       />
                     </label>
                   </div>

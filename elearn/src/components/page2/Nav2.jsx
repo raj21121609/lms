@@ -7,11 +7,13 @@ import Course from "../reusables/Course";
 import Instructor from "../page1/Instructor";
 import Courses from "../page1/Courses";
 import Footer from "../page1/Footer";
+import { useNavigate } from "react-router";
 
 const Nav2 = () => {
+
+  const navigate = useNavigate('')
   return (
     <>
-      {/* -------------------- NAVBAR -------------------- */}
       <div className="flex justify-center gap-14 items-center w-full h-16 border-b-2 border-gray-200 px-4">
         <div className="flex items-center gap-5">
           <div className="flex text-[#2C3E50] items-center">
@@ -19,8 +21,7 @@ const Nav2 = () => {
           </div>
 
           <div className="text-[#2C3E50]">Categories</div>
-
-          {/* Search Bar */}
+          
           <div className="group relative flex items-center w-[600px]">
             <svg
               className="absolute left-4 w-4 h-4 fill-[#9e9ea7]"
@@ -39,7 +40,10 @@ const Nav2 = () => {
             />
           </div>
 
-          <div className="text-[#2C3E50]">Teach on Myway</div>
+          <button className="text-[#2C3E50] cursor-pointer rounded-sm "
+          onClick={()=>{
+            navigate('/page9')
+          }} >Teach on Myway</button>
         </div>
 
         {/* Right Icons */}

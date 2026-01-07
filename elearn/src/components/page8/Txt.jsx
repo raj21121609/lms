@@ -32,7 +32,7 @@ const Txt = () => {
 
           <div className="mt-8">
             <div className="text-2xl font-[600]">Areas of Expertise</div>
-            <div className="text-gray-800 leading-relaxed mt-2">
+            <div className="text-gray-800 leading-relaxed mt-2 whitespace-pre-line">
               ◉ User Experience (UX) Design <br />
               ◉ User Interface (UI) Design <br />
               ◉ Information Architecture <br />
