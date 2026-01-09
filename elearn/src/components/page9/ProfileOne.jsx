@@ -3,15 +3,27 @@ import { LucideShare2 } from "lucide-react";
 import guy from "../../assets/guy.png";
 import Nav2 from "../page2/Nav2";
 import Footer from "../page1/Footer";
-
+import api from "../../api/api"
 import React from "react";
 
 const ProfileOne = () => {
-
-  const formHandler = (e) => {
-    e.preventDefault();
-    console.log({ webLink, XLLink, linkdin, youTube, Facebook });
-  };
+  const [image, setImage] = useState(null);
+  const [data, setdata] = useState({
+    first_name: "",
+    last_name: "",
+    headline: "",
+    tutor_description: "",
+    language: "",
+    image_label:"",
+    profile_pic:"",
+    areas_of_experience: "",
+    professional_experience: "",
+    website: "",
+    x: "",
+    linkdin: "",
+    youtube: "",
+    facebook: "",
+  })
 
   const handleUpload = (e) => {
     const file = e.target.files[0];
@@ -20,13 +32,7 @@ const ProfileOne = () => {
     }
   };
 
-  const languages = [
-    "English",
-    "German",
-    "Spanish",
-    "French",
-    "Italian",
-  ];
+  const languages = ["English", "German", "Spanish", "French", "Italian"];
 
   return (
     <>
@@ -43,7 +49,7 @@ const ProfileOne = () => {
             <p className="text-2xl mt-2 font-[600] mx-auto text-center">
               John Doe
             </p>
-            <button className="bg-white mx-auto flex text-md font-[500] mt-3  px-6 py-2 rounded-md border border-gray-400">
+            <button className="bg-white cursor-pointer mx-auto flex text-md font-[500] mt-3  px-6 py-2 rounded-md border border-gray-400">
               Share Profile
               <LucideShare2 className="ml-1" />
             </button>
@@ -72,8 +78,8 @@ const ProfileOne = () => {
         </div>
 
         <div className="w-[70%] h-full mt-8 mr-5 pr-20">
+          <form>
           <div className="w-full h-full  border border-gray-400 rounded-lg ">
-            <form onSubmit={formHandler}>
               <div className="flex gap-30 mt-5 ">
                 <div className="ml-6">
                   <label htmlFor="first_name">First Name</label>
@@ -81,8 +87,8 @@ const ProfileOne = () => {
                   <input
                     type="text"
                     id="first_name"
-                    name="firstName"
-                    placeholder="Label"
+                    name="first_name"
+                    placeholder="Enter your first name"
                     className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
                   />
                 </div>
@@ -92,8 +98,8 @@ const ProfileOne = () => {
                   <input
                     type="text"
                     id="last_name"
-                    name="lastName"
-                    placeholder="Label"
+                    name="last_name"
+                    placeholder="Enter your last name"
                     className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
                   />
                 </div>
@@ -105,7 +111,7 @@ const ProfileOne = () => {
                   type="text"
                   id="Headline"
                   name="headline"
-                  placeholder="Label"
+                  placeholder="Headline"
                   className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
                 />
               </div>
@@ -115,8 +121,7 @@ const ProfileOne = () => {
                 <input
                   type="text"
                   id="Description"
-                  name="Description"
-                  placeholder="Label"
+                  name="tutor_description"
                   className="pt-2 pb-20 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm"
                 />
               </div>
@@ -124,7 +129,7 @@ const ProfileOne = () => {
                 <label htmlFor="Language">Language</label>
                 <br />
                 <select
-                  name="Language"
+                  name="language"
                   id="language"
                   className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm mb-7"
                 >
@@ -139,30 +144,28 @@ const ProfileOne = () => {
               <div className="ml-6 mt-5">
                 <label htmlFor="aoe">Area of expertise</label>
                 <br />
-
                 <textarea
                   id="aoe"
-                  name="aoe"
-                  placeholder="Label"
+                  name="areas_of_experience"
+                  placeholder=""
                   rows={10}
                   className="pt-2 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm resize-none"
                 />
               </div>
 
-
               <div className="ml-6 mt-5 mb-5">
-                <label htmlFor="aoe">Professional Experience</label>
+                <label htmlFor="pe">Professional Experience</label>
                 <br />
                 <input
                   type="text"
                   id="pe"
-                  name="pe"
+                  name="professional_experience"
                   placeholder="Enter your Professional experience"
                   className="pt-2 pb-20 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm"
                 />
               </div>
-            </form>
           </div>
+
 
           <div className="w-full h-full  mt-3 border border-gray-400 rounded-lg ">
             <div className="w-full h-full flex justify-center p-6">
@@ -200,7 +203,7 @@ const ProfileOne = () => {
                   <div className="flex items-center gap-4">
                     <input
                       type="text"
-                      placeholder="Label"
+                      placeholder="Image label"
                       className="py-2 pl-2 text-sm mt-2 border w-full border-gray-400 rounded-sm"
                     />
 
@@ -210,6 +213,7 @@ const ProfileOne = () => {
                         type="file"
                         className="hidden"
                         accept="image/*"
+                        onChange={handleUpload}
                       />
                     </label>
                   </div>
@@ -222,24 +226,18 @@ const ProfileOne = () => {
             </div>
           </div>
 
-          {/* Links */}
           <div className="w-full h-full mt-3 border border-gray-400 rounded-lg ">
             <div className="ml-6  ">
               <p className="ml-6 mt-5 font-medium">Links</p>
-              <form onSubmit={formHandler}>
                 <div className=" mt-5 ml-6">
                   <div className="mt-5">
                     <label htmlFor="Website">Website</label>
                     <br />
                     <input
                       type="url"
-                      value={webLink}
-                      onChange={(e) => {
-                        setWebLink(e.target.value);
-                      }}
                       id="Website"
-                      name="Website"
-                      placeholder="Label"
+                      name="website"
+                      placeholder="Enter your website URL"
                       className="py-2 pl-2 text-sm mt-2 border w-2xl border-gray-400 rounded-sm"
                     />
                   </div>
@@ -249,13 +247,9 @@ const ProfileOne = () => {
                     <br />
                     <input
                       type="url"
-                      value={XLLink}
-                      onChange={(e) => {
-                        setXLLink(e.target.value);
-                      }}
                       id="twitter"
-                      name="twitter"
-                      placeholder="Label"
+                      name="x"
+                      placeholder="Enter your twitter URL"
                       className="py-2 pl-2 text-sm mt-2  border w-2xl border-gray-400 rounded-sm"
                     />
                   </div>
@@ -265,13 +259,9 @@ const ProfileOne = () => {
                     <br />
                     <input
                       type="url"
-                      value={linkdin}
-                      onChange={(e) => {
-                        setLinkdin(e.target.value);
-                      }}
                       id="linkdin"
                       name="linkdin"
-                      placeholder="Label"
+                      placeholder="Enter your linkdin URL"
                       className="py-2 pl-2 text-sm mt-2  border w-2xl border-gray-400 rounded-sm"
                     />
                   </div>
@@ -281,13 +271,9 @@ const ProfileOne = () => {
                     <br />
                     <input
                       type="url"
-                      value={youTube}
-                      onChange={(e) => {
-                        setYouTube(e.target.value);
-                      }}
                       id="youtube"
                       name="youtube"
-                      placeholder="Label"
+                      placeholder="Enter your youtube URL"
                       className="py-2 pl-2 text-sm  mt-2  border w-2xl border-gray-400 rounded-sm"
                     />
                   </div>
@@ -297,20 +283,21 @@ const ProfileOne = () => {
                     <br />
                     <input
                       type="url"
-                      value={Facebook}
-                      onChange={(e) => {
-                        setFacebook(e.target.value);
-                      }}
                       id="facebook"
-                      name="Facebook"
-                      placeholder="Label"
+                      name="facebook"
+                      placeholder="Enter your facebook URL"
                       className="py-2 pl-2 text-sm  mt-2  border mb-5 w-2xl border-gray-400 rounded-sm"
                     />
                   </div>
                 </div>
-              </form>
+                <div className="w-full h-16 mb-6 ml-5">
+                  <button className="mt-5 bg-[#0a132b] text-white px-6 py-3 rounded-lg text-sm" type="submit" value="submit">
+                    Submit
+                  </button>
+                </div> 
             </div>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
       <div className="h-20"></div>
