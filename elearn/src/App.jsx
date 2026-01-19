@@ -23,12 +23,15 @@ import Settings from './components/admin/pages/Settings'
 import Error_404 from'./components/reusables/Error_404.jsx'
 import Page0 from './components/pages/Page0.jsx'
 import PageS from './components/pages/PageS.jsx'
+import { Toaster } from "react-hot-toast";
+import CourseAddition from './components/admin/dashboard/CourseAddition.jsx'
 
 function App() {
 
   
   return (
     <>
+        <Toaster position="top-right" reverseOrder={false} />
         <Routes>
           <Route path='/login' element={<Page0/>} />
           <Route path='/signup' element={<PageS/>}/>
@@ -48,7 +51,8 @@ function App() {
           <Route path='/page14' element={<Page14/>}/>
           <Route path="/admin" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />}/>
+            <Route path="dashboard/course_add" element={<CourseAddition/>}/>
             <Route path="courses" element={<Courses />} />
             <Route path="revenue" element={<Revenue />} />
             <Route path="communication" element={<Communication />} />

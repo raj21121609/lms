@@ -4,6 +4,7 @@ import guy from "../../assets/guy.png";
 import Nav2 from "../page2/Nav2";
 import Footer from "../page1/Footer";
 import api from "../../api/api"
+import toast from "react-hot-toast";
 import React from "react";
 
 const ProfileOne = () => {
@@ -28,9 +29,40 @@ const ProfileOne = () => {
   const handleUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
+      setdata({
+        ...data,
+        'profile_pic':file,
+      })
       setImage(URL.createObjectURL(file));
     }
   };
+
+  function handleChange(e){
+    setdata({
+      ...data,
+      [e.target.name]:e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const formdata = new FormData()
+    
+    Object.keys(data).forEach((key)=>{
+      if (data[key]){
+        formdata.append(key,data[key])
+      }
+    })
+    
+    try {
+      await api.post('http://127.0.0.1:8000/api/Tutor_register/',
+        formdata
+      )
+      toast.success("profile saved successfully")
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   const languages = ["English", "German", "Spanish", "French", "Italian"];
 
@@ -78,7 +110,7 @@ const ProfileOne = () => {
         </div>
 
         <div className="w-[70%] h-full mt-8 mr-5 pr-20">
-          <form>
+          <form onSubmit={handleSubmit}>
           <div className="w-full h-full  border border-gray-400 rounded-lg ">
               <div className="flex gap-30 mt-5 ">
                 <div className="ml-6">
@@ -90,6 +122,7 @@ const ProfileOne = () => {
                     name="first_name"
                     placeholder="Enter your first name"
                     className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -101,6 +134,7 @@ const ProfileOne = () => {
                     name="last_name"
                     placeholder="Enter your last name"
                     className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -113,6 +147,7 @@ const ProfileOne = () => {
                   name="headline"
                   placeholder="Headline"
                   className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm"
+                  onChange={handleChange}
                 />
               </div>
               <div className="ml-6 mt-5">
@@ -123,6 +158,7 @@ const ProfileOne = () => {
                   id="Description"
                   name="tutor_description"
                   className="pt-2 pb-20 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm"
+                  onChange={handleChange}
                 />
               </div>
               <div className="ml-6 mt-5">
@@ -132,6 +168,7 @@ const ProfileOne = () => {
                   name="language"
                   id="language"
                   className="py-2 pl-2 text-sm mt-2 border w-xs border-gray-400 rounded-sm mb-7"
+                  onChange={handleChange}
                 >
                   {languages.map((language) => (
                     <option key={language} value={language}>
@@ -150,6 +187,7 @@ const ProfileOne = () => {
                   placeholder=""
                   rows={10}
                   className="pt-2 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm resize-none"
+                  onChange={handleChange}
                 />
               </div>
 
@@ -162,10 +200,10 @@ const ProfileOne = () => {
                   name="professional_experience"
                   placeholder="Enter your Professional experience"
                   className="pt-2 pb-20 pl-2 text-sm mt-2 border w-3xl mr-10 border-gray-400 rounded-sm"
+                  onChange={handleChange}
                 />
               </div>
           </div>
-
 
           <div className="w-full h-full  mt-3 border border-gray-400 rounded-lg ">
             <div className="w-full h-full flex justify-center p-6">
@@ -239,6 +277,7 @@ const ProfileOne = () => {
                       name="website"
                       placeholder="Enter your website URL"
                       className="py-2 pl-2 text-sm mt-2 border w-2xl border-gray-400 rounded-sm"
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -251,6 +290,7 @@ const ProfileOne = () => {
                       name="x"
                       placeholder="Enter your twitter URL"
                       className="py-2 pl-2 text-sm mt-2  border w-2xl border-gray-400 rounded-sm"
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -263,6 +303,7 @@ const ProfileOne = () => {
                       name="linkdin"
                       placeholder="Enter your linkdin URL"
                       className="py-2 pl-2 text-sm mt-2  border w-2xl border-gray-400 rounded-sm"
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -275,6 +316,7 @@ const ProfileOne = () => {
                       name="youtube"
                       placeholder="Enter your youtube URL"
                       className="py-2 pl-2 text-sm  mt-2  border w-2xl border-gray-400 rounded-sm"
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -287,6 +329,7 @@ const ProfileOne = () => {
                       name="facebook"
                       placeholder="Enter your facebook URL"
                       className="py-2 pl-2 text-sm  mt-2  border mb-5 w-2xl border-gray-400 rounded-sm"
+                      onChange={handleChange}
                     />
                   </div>
                 </div>

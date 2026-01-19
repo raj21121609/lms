@@ -51,9 +51,10 @@ const Nav2 = () => {
           <Heart />
           <ShoppingCart color="#2C3E50" />
           <Bell />
-          <div className="bg-gray-600 rounded-full h-10 w-10 flex justify-center items-center text-white text-xl">
+          <button>
+          <div className="bg-gray-600 cursor-pointer rounded-full h-10 w-10 flex justify-center items-center text-white text-xl">
             J
-          </div>
+          </div></button>
         </div>
       </div>
 
