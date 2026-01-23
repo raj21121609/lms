@@ -49,7 +49,9 @@ const Nav2 = () => {
         {/* Right Icons */}
         <div className="flex gap-8 items-center pr-2">
           <Heart />
-          <ShoppingCart color="#2C3E50" />
+          <ShoppingCart color="#2C3E50" className="cursor-pointer" onClick={()=>{
+            navigate('/page4')
+          }}/>
           <Bell />
           <button>
           <div className="bg-gray-600 cursor-pointer rounded-full h-10 w-10 flex justify-center items-center text-white text-xl">

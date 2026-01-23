@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import api from "../../../api/api";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const CourseAddition = () => {
   const [Thumbnail, setThumbnail] = useState(null);
@@ -13,6 +14,8 @@ const CourseAddition = () => {
     certification: "",
     language: "",
   });
+  const [isSubmitted, setisSubmitted] = useState(false)
+  const navigate = useNavigate()
 
   function handleChange(e) {
     setdata({
@@ -40,6 +43,7 @@ const CourseAddition = () => {
           "Content-Type": "multipart/form-data",
         },
       });
+      setisSubmitted(true)
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +68,12 @@ const CourseAddition = () => {
             <button
               type="submit"
               value="sumbit"
-              className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm cursor-pointer"
+              onClick={() => {
+                if (isSubmitted) {
+                  navigate('/admin/dashboard')
+                }
+              }}
             >
               Create Course
             </button>

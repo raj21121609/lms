@@ -25,6 +25,13 @@ import Page0 from './components/pages/Page0.jsx'
 import PageS from './components/pages/PageS.jsx'
 import { Toaster } from "react-hot-toast";
 import CourseAddition from './components/admin/dashboard/CourseAddition.jsx'
+import Chapters from './components/admin/courses/Chapters.jsx'
+import Commision from './components/admin/courses/Commision.jsx'
+import Costumer from './components/admin/courses/Costumer.jsx'
+import Promotion from './components/admin/courses/Promotion.jsx'
+import Details from './components/admin/courses/Details.jsx'
+import Review from './components/admin/courses/Review.jsx'
+import SettingsC from './components/admin/courses/Settings.jsx'
 
 function App() {
 
@@ -53,7 +60,15 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />}/>
             <Route path="dashboard/course_add" element={<CourseAddition/>}/>
-            <Route path="courses" element={<Courses />} />
+            <Route path="courses" element={<Courses />}>
+              <Route path="Commision" element={<Commision/>}/>
+              <Route path="Chapters" element={<Chapters/>}/>
+              <Route path="Reviews" element={<Review/>}/>
+              <Route path="Costumer" element={<Costumer/>}/>
+              <Route path="Promotion" element={<Promotion/>}/>
+              <Route path="Detail" element={<Details/>}/>
+              <Route path="Settings" element={<SettingsC/>}/>
+            </Route>
             <Route path="revenue" element={<Revenue />} />
             <Route path="communication" element={<Communication />} />
             <Route path="settings" element={<Settings />} />
